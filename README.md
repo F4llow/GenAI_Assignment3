@@ -4,7 +4,7 @@ CSCI 455/555 — GenAI for Software Development William & Mary Name: [Your Name]
 
 Project Overview
 
-This research project evaluates the impact of domain-specific pre-training on a 60M-parameter T5-Small architecture for automated Java bug fixing. We compare four distinct configurations against the CodeXGLUE Code Refinement (medium) benchmark:
+This research project evaluates the impact of domain-specific pre-training on a 60M-parameter T5-Small architecture for automated Java bug fixing. We compare four distinct configurations against the CodeXGLUE Code Refinement (medium) benchmark: https://huggingface.co/datasets/google/code_x_glue_cc_code_refinement
 
 Configuration
 
