@@ -1,5 +1,5 @@
 # Investigation of Pre-training vs. RAG for Java Bug Fixing
-**Course:** CSCI 455/555 — GenAI for Software Development, William & Mary  
+**Course:** CSCI 455/555 — GenAI for Software Development, Nathaniel Callabresi
 **Repository:** [https://github.com/F4llow/GenAI_Assignment3/](https://github.com/F4llow/GenAI_Assignment3/)
 
 ## Project Overview
