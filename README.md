@@ -15,18 +15,6 @@ This research project evaluates the impact of domain-specific pre-training on a 
 
 ---
 
-## Key Findings & Comparative Analysis
-
-1. **The Inference Efficiency Paradox** Despite Pipeline B (fine-tuned from scratch) achieving a higher CodeBLEU score, it suffered from a massive "babbling" penalty, resulting in a **10.5x increase in inference latency**. Pipeline A learned structural stopping cues (the `</s>` EOS token) during pre-training, allowing it to complete the test set evaluation in ~10 minutes. Pipeline B failed to learn these cues effectively, hallucinating code until reaching the hard token limit for nearly every sample, resulting in a ~1.7-hour evaluation time.
-
-2. **The Initialization Trade-off** At this constrained corpus scale (50K methods, 3 epochs), fine-tuning from scratch (Pipeline B) yielded a significantly higher CodeBLEU (51.99) than the pre-trained variant (30.73). This suggests that for specialized sequence-to-sequence tasks with sufficient labeled data, direct convergence on the task objective may yield higher raw accuracy than forcing the model to "unlearn" a limited span-corruption pre-training objective.
-
-3. **Tokenizer `<unk>` Collapse** During development, we identified and resolved a critical failure where legacy Hugging Face tokenizer wrappers caused the model to default to `<unk>` for valid Java code. The fix involved migrating to a Rust-based `PreTrainedTokenizerFast` backend with a Unigram SentencePiece model to properly parse whitespace.
-
-4. **RAG Performance** Retrieval-Augmented Generation provided a noticeable boost to the Qwen model, increasing CodeBLEU from 42.84 to 44.51. This validates the use of CodeBERT for the semantic retrieval of analogous bug patterns rather than relying purely on zero-shot generalization.
-
----
-
 ## Results Summary
 
 | Configuration | Exact Match | CodeBLEU | Runtime (Eval) |
